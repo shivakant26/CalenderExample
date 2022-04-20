@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './Component/Header';
+import { BrowserRouter as Router } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Routing from './Component/Routing';
+import { Container } from 'react-bootstrap';
+import Footer from './Component/Footer';
+import Dashboard from './Pages/dashboard';
+
 
 function App() {
+  var token = localStorage.getItem("token");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App_wr">
+            <Router>
+              {/* <div className='header'>
+                <Container>
+                  <Header />
+                </Container>
+              </div> */}
+              <Routing />
+            </Router>
+            <Footer />
+
     </div>
   );
 }
